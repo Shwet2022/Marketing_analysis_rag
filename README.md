@@ -1,157 +1,182 @@
-📌 Endee AI Marketing RAG
-🚀 Overview
+<h1 align="center">📌 Endee AI Marketing RAG</h1>
+<p align="center">
+  <b>AI-powered marketing analytics with semantic search, vector storage, and interactive dashboards</b>
+</p>
 
-This project is an AI-powered marketing analytics system that leverages the Endee Vector Database to perform semantic search on both structured and unstructured data. It enables users to query customer and campaign data using natural language and visualize insights through interactive dashboards.
+<hr>
 
-The system demonstrates a real-world AI pipeline combining data ingestion, embedding generation, vector storage, and semantic retrieval.
+<h2>🚀 Overview</h2>
+<p>
+  This project is an <b>AI-powered marketing analytics system</b> that leverages the
+  <b>Endee Vector Database</b> to perform semantic search on both
+  <b>structured</b> and <b>unstructured</b> data.
+  It enables users to query customer and campaign data using natural language
+  and visualize insights through interactive dashboards.
+</p>
 
-🎯 Key Features
+<p>
+  The system demonstrates a real-world AI pipeline combining
+  <b>data ingestion</b>, <b>embedding generation</b>, <b>vector storage</b>,
+  and <b>semantic retrieval</b>.
+</p>
 
-🔍 Semantic Search using Endee Vector Database
+<hr>
 
-📊 Interactive Data Visualization (Streamlit charts)
+<h2>🎯 Key Features</h2>
+<ul>
+  <li>🔍 <b>Semantic Search</b> using Endee Vector Database</li>
+  <li>📊 <b>Interactive Data Visualization</b> with Streamlit charts</li>
+  <li>🧠 <b>Natural Language Querying</b> over customer data</li>
+  <li>📁 Handles both:
+    <ul>
+      <li><b>Structured data</b> (CSV)</li>
+      <li><b>Unstructured data</b> (Text files)</li>
+    </ul>
+  </li>
+  <li>⚡ Fast retrieval using <b>vector similarity</b></li>
+  <li>🏗️ Modular architecture: <b>ingest → query → UI</b></li>
+</ul>
 
-🧠 Natural Language Querying over customer data
+<hr>
 
-📁 Handles both:
+<h2>🧠 System Architecture</h2>
+<p align="center">
+  <img width="1024" height="1536" alt="system_arc" src="https://github.com/user-attachments/assets/360e716a-7370-4832-92cf-64dc6a49b5bf" />
 
-Structured data (CSV)
+</p>
 
-Unstructured data (text files)
+<hr>
 
-⚡ Fast retrieval using vector similarity
+<h2>🛠️ Tech Stack</h2>
+<ul>
+  <li>Python</li>
+  <li>Endee Vector Database</li>
+  <li>Sentence Transformers (Embeddings)</li>
+  <li>Streamlit (UI &amp; Visualization)</li>
+  <li>Pandas (Data Processing)</li>
+  <li>Docker (Endee Server)</li>
+</ul>
 
-🏗️ Modular architecture (ingest → query → UI)
+<hr>
 
-)
-
-🧠 System Architecture
-
-Structured Data (CSV) + Unstructured Data (TXT)
-                ↓
-         Text Conversion
-                ↓
-     Embedding Generation (Sentence Transformers)
-                ↓
-        Endee Vector Database
-                ↓
-        Query Embedding
-                ↓
-      Semantic Retrieval (Top-K Results)
-                ↓
-         Streamlit UI + Charts
-
-🛠️ Tech Stack
-
-Python
-
-Endee Vector Database
-
-Sentence Transformers (Embeddings)
-
-Streamlit (UI & Visualization)
-
-Pandas (Data Processing)
-
-Docker (Endee Server)
-
-📂 Project Structure
+<h2>📁 Project Structure</h2>
+<pre>
 endee-ai-project/
 │
-├── app.py           # Streamlit UI (graphs + query)
-├── ingest.py        # Data ingestion into Endee
-├── query.py         # Semantic search logic
-├── bank-full.csv    # Structured dataset
-├── docs.txt         # Unstructured text data
-├── requirements.txt
-└── README.md
-⚙️ Setup Instructions
-1️⃣ Clone Repository
-git clone https://github.com/Shwet2022/Marketing_analysis_rag.git
-cd Marketing_analysis_rag
-2️⃣ Setup Virtual Environment
-python -m venv venv
+├── app.py           → Streamlit UI (graphs + query)
+├── ingest.py        → Data ingestion into Endee
+├── query.py         → Semantic search logic
+├── bank-full.csv    → Structured dataset
+├── docs.txt         → Unstructured text data
+├── requirements.txt → Dependencies
+└── README.md        → Documentation
+</pre>
 
-Activate:
+<hr>
 
-# Windows
-.\venv\Scripts\activate
-3️⃣ Install Dependencies
-pip install -r requirements.txt
-4️⃣ Run Endee Server (Docker)
-docker run --ulimit nofile=100000:100000 -p 8080:8080 -v "${PWD}\endee-data:/data" --name endee-server --restart unless-stopped endeeio/endee-server:latest
-5️⃣ Ingest Data (Run Once)
-python ingest.py
-6️⃣ Run Application
-streamlit run app.py
+<h2>⚙️ Setup Instructions</h2>
 
-Open in browser:
+<h3>1️⃣ Clone Repository</h3>
+<pre><code>git clone https://github.com/Shwet2022/Marketing_analysis_rag.git
+cd Marketing_analysis_rag</code></pre>
 
-http://localhost:8501
-📊 Dataset
+<h3>2️⃣ Setup Virtual Environment</h3>
+<pre><code>python -m venv venv</code></pre>
 
-Bank Marketing Dataset
+<p><b>Activate:</b></p>
+<p><b>Windows</b></p>
+<pre><code>.\venv\Scripts\activate</code></pre>
 
-Contains customer attributes such as:
+<h3>3️⃣ Install Dependencies</h3>
+<pre><code>pip install -r requirements.txt</code></pre>
 
-Age, Job, Marital Status
+<h3>4️⃣ Run Endee Server (Docker)</h3>
+<pre><code>docker run --ulimit nofile=100000:100000 -p 8080:8080 -v "${PWD}\endee-data:/data" --name endee-server --restart unless-stopped endeeio/endee-server:latest</code></pre>
 
-Education, Loans, Balance
+<h3>5️⃣ Ingest Data (Run Once)</h3>
+<pre><code>python ingest.py</code></pre>
 
-Campaign outcomes (subscribed: yes/no)
+<h3>6️⃣ Run Application</h3>
+<pre><code>streamlit run app.py</code></pre>
 
-🔍 Example Queries
+<p><b>Open in browser:</b></p>
+<pre><code>http://localhost:8501</code></pre>
 
-Which customers are likely to subscribe?
+<hr>
 
-Find high-value customers for marketing campaigns
+<h2>📊 Dataset</h2>
+<p><b>Bank Marketing Dataset</b></p>
+<p>Contains customer attributes such as:</p>
+<ul>
+  <li>Age, Job, Marital Status</li>
+  <li>Education, Loans, Balance</li>
+  <li>Campaign outcomes (subscribed: yes/no)</li>
+</ul>
 
-Which users have housing loans?
+<hr>
 
-Show financially stable customers
+<h2>🔍 Example Queries</h2>
+<ul>
+  <li>Which customers are likely to subscribe?</li>
+  <li>Find high-value customers for marketing campaigns</li>
+  <li>Which users have housing loans?</li>
+  <li>Show financially stable customers</li>
+</ul>
 
-⚠️ Important Notes
+<hr>
 
-Data ingestion is performed once using ingest.py
+<h2>⚠️ Important Notes</h2>
+<ul>
+  <li>Data ingestion is performed once using <code>ingest.py</code></li>
+  <li>UI performs real-time retrieval only</li>
+  <li>Endee stores vector embeddings, not raw structured queries</li>
+  <li>Filtering is implemented on top of semantic search</li>
+</ul>
 
-UI performs real-time retrieval only
+<hr>
 
-Endee stores vector embeddings, not raw structured queries
+<h2>🏆 Key Learning Outcomes</h2>
+<ul>
+  <li>Built a real-world AI system using vector databases</li>
+  <li>Integrated structured + unstructured data</li>
+  <li>Implemented semantic search pipeline</li>
+  <li>Developed an interactive analytics dashboard</li>
+</ul>
 
-Filtering is implemented on top of semantic search
+<hr>
 
-🏆 Key Learning Outcomes
+<h2>🚀 Future Improvements</h2>
+<ul>
+  <li>Add LLM-based answer generation (RAG)</li>
+  <li>Implement advanced filtering using metadata</li>
+  <li>Enable file upload (CSV/PDF ingestion)</li>
+  <li>Improve ranking and recommendation logic</li>
+</ul>
 
-Built a real-world AI system using vector databases
+<hr>
 
-Integrated structured + unstructured data
+<h2>👨‍💻 Authors</h2>
+<p>
+  <b>Shwetangi Tiwari</b><br>
+  GitHub:
+  <a href="https://github.com/Shwet2022" target="_blank">https://github.com/Shwet2022</a>
+</p>
 
-Implemented semantic search pipeline
+<hr>
 
-Developed an interactive analytics dashboard
+<h2>⭐ Acknowledgements</h2>
+<ul>
+  <li>Endee Vector Database</li>
+  <li>HuggingFace Sentence Transformers</li>
+  <li>Streamlit</li>
+</ul>
 
-🚀 Future Improvements
+<hr>
 
-Add LLM-based answer generation (RAG)
-
-Implement advanced filtering using metadata
-
-Enable file upload (CSV/PDF ingestion)
-
-Improve ranking and recommendation logic
-
-👨‍💻 Authors
-
-Shwetangi Tiwari
-GitHub: https://github.com/Shwet2022
-
-⭐ Acknowledgements
-
-Endee Vector Database
-
-HuggingFace Sentence Transformers
-
-Streamlit
+<h2>📸 Response SS</h2>
+<p align="center">
+  <b>Sample Output / Query Response Screenshots</b>
+</p>
 
 
 <img width="1887" height="942" alt="image" src="https://github.com/user-attachments/assets/17167a94-916d-401b-8c69-934024dca74d" />
