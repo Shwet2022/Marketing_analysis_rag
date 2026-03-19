@@ -152,3 +152,8 @@ Endee Vector Database
 HuggingFace Sentence Transformers
 
 Streamlit
+
+
+<img width="1887" height="942" alt="image" src="https://github.com/user-attachments/assets/17167a94-916d-401b-8c69-934024dca74d" />
+
+<img width="1892" height="914" alt="image" src="https://github.com/user-attachments/assets/37d37ce9-6578-48c5-b92a-fd31938b55dd" />
